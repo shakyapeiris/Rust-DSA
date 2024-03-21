@@ -14,7 +14,7 @@ mod tests {
     }
 
     #[test]
-    fn create_a_new_node() {
+    fn test_create_a_new_node() {
         let new_node = linked_list::Node::new(Some(10));
 
         assert_eq!(new_node.next, None);
@@ -22,7 +22,7 @@ mod tests {
     }
 
     #[test] 
-    fn inserts_a_new_node(){
+    fn test_inserts_a_new_node(){
         let mut new_node = linked_list::Node::new(Some(10));
         new_node.insert(Some(100));
 
@@ -31,7 +31,7 @@ mod tests {
     }
 
     #[test]
-    fn reverse_a_list() {
+    fn test_reverse_a_list() {
         let mut new_node = linked_list::Node::new(Some(10));
         new_node.insert(Some(100));
         new_node.insert(Some(200));
@@ -42,6 +42,15 @@ mod tests {
             Some(node) => assert_eq!(node.value, Some(100)),
             None => panic!("Head of the reverse list should point to the node with value 200")
         }
+    }
+
+    #[test]
+    fn test_get_length(){
+        let mut new_node = linked_list::Node::new(Some(10));
+        new_node.insert(Some(100));
+        new_node.insert(Some(200));
+
+        assert_eq!(new_node.len(), 3)
     }
     
 }

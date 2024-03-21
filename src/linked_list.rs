@@ -48,4 +48,11 @@ impl<T> Node<T> {
         }
 
     }
+
+    pub fn len(&self) -> i32{
+        match &self.next {
+            Some(node) => node.len() + 1,
+            None => 1
+        }
+    }
 }
