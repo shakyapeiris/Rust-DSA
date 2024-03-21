@@ -6,12 +6,6 @@ mod tests {
 
     use super::*;
 
-    #[test]
-    fn it_works() {
-        let result = 2 + 2;
-        assert_eq!(result, 4);
-    }
-
     fn get_new_value<T>(head: &Node<T>) -> &Option<T>{
         match &head.next {
             Some(node) => get_new_value(&node),
@@ -43,7 +37,11 @@ mod tests {
         new_node.insert(Some(200));
 
         let new_head = new_node.reverse(None);
-        assert_eq!(new_head.value, Some(200))
+        assert_eq!(new_head.value, Some(200));
+        match new_head.next {
+            Some(node) => assert_eq!(node.value, Some(100)),
+            None => panic!("Head of the reverse list should point to the node with value 200")
+        }
     }
     
 }
