@@ -1,6 +1,6 @@
 # Rust DSA
 
-[ ] Linked Lists
-[ ] Trees
-[ ] Binary Tree
-[ ] Graph
+- [X] Linked Lists
+- [ ] Trees
+- [ ] Binary Tree
+- [ ] Graph
